@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core_package/theme/text_style/app_text_style.dart';
-import 'package:flutter_core_package/config/theme_config.dart';
-import 'package:flutter_core_package/typography/font_family.dart';
+import 'package:flutter_core_package/flutter_core_package.dart';
 
 /// Application theme class
 ///
 /// Creates a complete Material Design 3 theme with light or dark mode support
 class AppTheme {
   final ColorScheme colorScheme;
-  final ThemeConfig config;
 
-  const AppTheme({required this.colorScheme, this.config = const ThemeConfig()});
-
-  /// Get the theme label (light or dark)
-  String get label => colorScheme.brightness == Brightness.light ? 'light' : 'dark';
+  const AppTheme({required this.colorScheme});
 
   /// Build the complete ThemeData
   ThemeData build() {
-    final customizer = config.themeCustomizer;
-
     return ThemeData(
-      useMaterial3: config.useMaterial3,
+      useMaterial3: true,
       brightness: colorScheme.brightness,
       colorScheme: colorScheme,
-      fontFamily: config.fontFamily ?? AppFontFamily.defaultFont,
+      fontFamily: AppFontFamily.defaultFont,
       textTheme: TextTheme(
         displayLarge: AppTextStyle.displayLarge,
         displayMedium: AppTextStyle.displayMedium,
@@ -42,37 +34,37 @@ class AppTheme {
         labelSmall: AppTextStyle.labelSmall,
       ),
       // Button themes
-      elevatedButtonTheme: customizer.elevatedButtonTheme(colorScheme),
-      filledButtonTheme: customizer.filledButtonTheme(colorScheme),
-      outlinedButtonTheme: customizer.outlinedButtonTheme(colorScheme),
-      textButtonTheme: customizer.textButtonTheme(colorScheme),
-      iconButtonTheme: customizer.iconButtonTheme(colorScheme),
-      floatingActionButtonTheme: customizer.floatingActionButtonTheme(colorScheme),
+      elevatedButtonTheme: ButtonThemes.elevatedButtonTheme(colorScheme),
+      filledButtonTheme: ButtonThemes.filledButtonTheme(colorScheme),
+      outlinedButtonTheme: ButtonThemes.outlinedButtonTheme(colorScheme),
+      textButtonTheme: ButtonThemes.textButtonTheme(colorScheme),
+      iconButtonTheme: ButtonThemes.iconButtonTheme(colorScheme),
+      floatingActionButtonTheme: ButtonThemes.floatingActionButtonTheme(colorScheme),
       // Input theme
-      inputDecorationTheme: customizer.inputDecorationTheme(colorScheme),
+      inputDecorationTheme: InputThemes.inputDecorationTheme(colorScheme),
       // App bar theme
-      appBarTheme: customizer.appBarTheme(colorScheme),
+      appBarTheme: AppBarThemes.appBarTheme(colorScheme),
       // Card theme
-      cardTheme: customizer.cardTheme(colorScheme),
+      cardTheme: CardThemes.cardTheme(colorScheme),
       // Chip theme
-      chipTheme: customizer.chipTheme(colorScheme),
+      chipTheme: ChipThemes.chipTheme(colorScheme),
       // Bottom navigation bar theme
-      bottomNavigationBarTheme: customizer.bottomNavigationBarTheme(colorScheme),
+      bottomNavigationBarTheme: BottomNavigationBarThemes.bottomNavigationBarTheme(colorScheme),
       // Tab bar theme
-      tabBarTheme: customizer.tabBarTheme(colorScheme),
+      tabBarTheme: TabBarThemes.tabBarTheme(colorScheme),
       // Switch theme
-      switchTheme: customizer.switchTheme(colorScheme),
+      switchTheme: SwitchThemes.switchTheme(colorScheme),
       // Checkbox theme
-      checkboxTheme: customizer.checkboxTheme(colorScheme),
+      checkboxTheme: CheckboxThemes.checkboxTheme(colorScheme),
       // Radio theme
-      radioTheme: customizer.radioTheme(colorScheme),
+      radioTheme: RadioThemes.radioTheme(colorScheme),
       // Bottom sheet theme
-      bottomSheetTheme: customizer.bottomSheetTheme(colorScheme),
+      bottomSheetTheme: BottomSheetThemes.bottomSheetTheme(colorScheme),
       // Dialog theme
-      dialogTheme: customizer.dialogTheme(colorScheme),
+      dialogTheme: DialogThemes.dialogTheme(colorScheme),
       // Icon themes
-      iconTheme: customizer.iconTheme(colorScheme),
-      primaryIconTheme: customizer.primaryIconTheme(colorScheme),
+      iconTheme: IconThemes.iconTheme(colorScheme),
+      primaryIconTheme: IconThemes.primaryIconTheme(colorScheme),
     );
   }
 }

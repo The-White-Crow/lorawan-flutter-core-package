@@ -55,10 +55,6 @@ export 'typography/font_size.dart';
 // Dimensions exports
 export 'dimensions/app_dimensions.dart';
 
-// Config exports
-export 'config/theme_config.dart';
-export 'config/extended_color_config.dart';
-
 // State management exports
 export 'state/state.dart';
 
