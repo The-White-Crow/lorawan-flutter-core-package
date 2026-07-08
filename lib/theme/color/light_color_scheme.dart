@@ -37,7 +37,7 @@ class LightColorScheme {
       onErrorContainer: ColorPalette.error[900]!,
 
       // Surface colors
-      surface: Colors.white,
+      surface: ColorPalette.lightSurface,
       onSurface: ColorPalette.neutral[900]!,
       surfaceContainerHighest: ColorPalette.neutral[100]!,
       onSurfaceVariant: ColorPalette.neutral,

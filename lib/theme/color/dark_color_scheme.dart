@@ -37,7 +37,7 @@ class DarkColorScheme {
       onErrorContainer: ColorPalette.error[100]!,
 
       // Surface colors
-      surface: Color(0xFF1C1B1F),
+      surface: ColorPalette.darkSurface,
       onSurface: ColorPalette.neutral[200]!,
       surfaceContainerHighest: ColorPalette.neutral[700]!,
       onSurfaceVariant: ColorPalette.neutral[400]!,
