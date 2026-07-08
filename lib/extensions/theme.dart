@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_core_package/flutter_core_package.dart';
 
 extension CustomThemeExtensionGetter on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
@@ -12,6 +13,14 @@ extension CustomThemeExtensionGetter on BuildContext {
   bool get isLight => Theme.of(this).brightness == Brightness.light;
 
   TextStyle get textInputFieldStyle => textTheme.labelSmall!.copyWith(color: colorScheme.onSurface);
+}
+
+extension ExtendedColorSchemeExtension on BuildContext {
+  ColorFamily get infoScheme => isLight ? ExtendedColorScheme.info.light : ExtendedColorScheme.info.dark;
+
+  ColorFamily get successScheme => isLight ? ExtendedColorScheme.success.light : ExtendedColorScheme.success.dark;
+
+  ColorFamily get warningScheme => isLight ? ExtendedColorScheme.warning.light : ExtendedColorScheme.warning.dark;
 }
 
 extension BuildContextExtension on BuildContext {
