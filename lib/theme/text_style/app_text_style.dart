@@ -42,6 +42,24 @@ class AppTextStyle {
 
   static TextStyle get bodySmall => _getTextStyle(fontWeight: AppFontWeight.regular, fontSize: AppFontSize.s14);
 
+  /// Body 2
+  static TextStyle get body2Large => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s20);
+  static TextStyle get body2Medium => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s16);
+  static TextStyle get body2Small => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s14);
+
+  /// Label Active
+  static TextStyle get labelActiveLarge => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s18);
+  static TextStyle get labelActiveMedium => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s16);
+  static TextStyle get labelActiveSmall => AppTextStyle.getSemiBoldStyle(fontSize: AppFontSize.s14);
+
+  /// Overline
+  static TextStyle get overlineMedium => AppTextStyle.getMediumStyle(fontSize: AppFontSize.s12);
+  static TextStyle get overlineSmall => AppTextStyle.getMediumStyle(fontSize: AppFontSize.s10);
+
+  /// Overline 2
+  static TextStyle get overline2Medium => AppTextStyle.getBoldStyle(fontSize: AppFontSize.s12);
+  static TextStyle get overline2Small => AppTextStyle.getBoldStyle(fontSize: AppFontSize.s10);
+
   /// Helper method to create text styles
   static TextStyle _getTextStyle({
     FontWeight? fontWeight,
