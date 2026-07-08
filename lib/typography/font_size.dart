@@ -4,23 +4,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppFontSize {
   AppFontSize._();
 
-  static double s8 = 8.sp;
-  static double s10 = 10.sp;
-  static double s11 = 11.sp;
-  static double s12 = 12.sp;
-  static double s14 = 14.sp;
-  static double s16 = 16.sp;
-  static double s18 = 18.sp;
-  static double s20 = 20.sp;
-  static double s22 = 22.sp;
-  static double s24 = 24.sp;
-  static double s28 = 28.sp;
-  static double s32 = 32.sp;
-  static double s34 = 34.sp;
-  static double s36 = 36.sp;
-  static double s40 = 40.sp;
-  static double s48 = 48.sp;
-  static double s60 = 60.sp;
-  static double s96 = 96.sp;
+  static double s8 = 8.spMin;
+  static double s10 = 10.spMin;
+  static double s11 = 11.spMin;
+  static double s12 = 12.spMin;
+  static double s14 = 14.spMin;
+  static double s16 = 16.spMin;
+  static double s18 = 18.spMin;
+  static double s20 = 20.spMin;
+  static double s22 = 22.spMin;
+  static double s24 = 24.spMin;
+  static double s28 = 28.spMin;
+  static double s32 = 32.spMin;
+  static double s34 = 34.spMin;
+  static double s36 = 36.spMin;
+  static double s40 = 40.spMin;
+  static double s48 = 48.spMin;
+  static double s60 = 60.spMin;
+  static double s96 = 96.spMin;
 }
-
