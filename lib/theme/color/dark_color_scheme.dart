@@ -13,48 +13,48 @@ class DarkColorScheme {
       brightness: Brightness.dark,
 
       // Primary colors
-      primary: ColorPalette.primary[80]!,
-      onPrimary: ColorPalette.primary[20]!,
-      primaryContainer: ColorPalette.primary[30]!,
-      onPrimaryContainer: ColorPalette.primary[90]!,
+      primary: ColorPalette.primary[300]!,
+      onPrimary: ColorPalette.primary[900]!,
+      primaryContainer: ColorPalette.primary[700]!,
+      onPrimaryContainer: ColorPalette.primary[100]!,
 
       // Secondary colors
-      secondary: ColorPalette.secondary[80]!,
-      onSecondary: ColorPalette.secondary[20]!,
-      secondaryContainer: ColorPalette.secondary[30]!,
-      onSecondaryContainer: ColorPalette.secondary[90]!,
+      secondary: ColorPalette.secondary[300]!,
+      onSecondary: ColorPalette.secondary[900]!,
+      secondaryContainer: ColorPalette.secondary[800]!,
+      onSecondaryContainer: ColorPalette.secondary[100]!,
 
       // Tertiary colors
-      tertiary: ColorPalette.tertiary[80]!,
-      onTertiary: ColorPalette.tertiary[20]!,
-      tertiaryContainer: ColorPalette.tertiary[30]!,
-      onTertiaryContainer: ColorPalette.tertiary[90]!,
+      tertiary: ColorPalette.tertiary[300]!,
+      onTertiary: ColorPalette.tertiary[900]!,
+      tertiaryContainer: ColorPalette.tertiary[800]!,
+      onTertiaryContainer: ColorPalette.tertiary[100]!,
 
       // Error colors
-      error: ColorPalette.error[80]!,
-      onError: ColorPalette.error[20]!,
-      errorContainer: ColorPalette.error[30]!,
-      onErrorContainer: ColorPalette.error[90]!,
+      error: ColorPalette.error[300]!,
+      onError: ColorPalette.error[900]!,
+      errorContainer: ColorPalette.error[800]!,
+      onErrorContainer: ColorPalette.error[100]!,
 
       // Surface colors
-      surface: ColorPalette.neutral[6]!,
-      onSurface: ColorPalette.neutral[90]!,
-      surfaceContainerHighest: ColorPalette.neutralVariant[30]!,
-      onSurfaceVariant: ColorPalette.neutralVariant[80]!,
+      surface: Color(0xFF1C1B1F),
+      onSurface: ColorPalette.neutral[200]!,
+      surfaceContainerHighest: ColorPalette.neutral[700]!,
+      onSurfaceVariant: ColorPalette.neutral[400]!,
 
       // Outline colors
-      outline: ColorPalette.neutralVariant[60]!,
-      outlineVariant: ColorPalette.neutralVariant[30]!,
+      outline: ColorPalette.neutral,
+      outlineVariant: ColorPalette.neutral[700]!,
 
       // Inverse colors
-      inversePrimary: ColorPalette.primary[40]!,
-      inverseSurface: ColorPalette.neutral[90]!,
-      onInverseSurface: ColorPalette.neutral[20]!,
+      inversePrimary: ColorPalette.primary[500]!,
+      inverseSurface: ColorPalette.neutral[200]!,
+      onInverseSurface: Color(0xFF1C1B1F),
 
       // Other colors
       shadow: ColorPalette.black,
       scrim: ColorPalette.black,
-      surfaceTint: ColorPalette.primary[80]!,
+      surfaceTint: ColorPalette.primary,
     );
   }
 }
