@@ -15,7 +15,7 @@ class AppTheme {
       useMaterial3: true,
       brightness: colorScheme.brightness,
       colorScheme: colorScheme,
-      fontFamily: AppFontFamily.defaultFont,
+      fontFamily: AppFontFamily.iranSansX,
       textTheme: TextTheme(
         displayLarge: AppTextStyle.displayLarge,
         displayMedium: AppTextStyle.displayMedium,

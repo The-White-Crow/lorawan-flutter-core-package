@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core_package/typography/font_family.dart';
 import 'package:flutter_core_package/typography/font_weight.dart';
 import 'package:flutter_core_package/typography/font_size.dart';
 
@@ -71,7 +70,7 @@ class AppTextStyle {
   }) {
     return TextStyle(
       fontWeight: fontWeight,
-      fontFamily: fontFamily ?? AppFontFamily.defaultFont,
+      fontFamily: fontFamily,
       fontSize: fontSize,
       color: color,
       height: height,
