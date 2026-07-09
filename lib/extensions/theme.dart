@@ -32,3 +32,7 @@ extension BuildContextExtension on BuildContext {
 
   Orientation get orientation => MediaQuery.of(this).orientation;
 }
+
+extension CardColorExtension on ColorScheme {
+  Color get cardColor => brightness == Brightness.light ? ColorPalette.lightCard : ColorPalette.darkCard;
+}

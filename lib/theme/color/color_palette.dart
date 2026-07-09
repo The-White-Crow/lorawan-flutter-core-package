@@ -15,14 +15,12 @@ class ColorPalette {
   static const Color light = Color(0xFFFFFFFF);
   static const Color lightSurface = Color(0xFFF9FAFB);
   static const Color lightCard = Color(0xFFFFFFFF);
-  static const Color lightBorder = Color(0xFFE5E7EB);
   static const Color lightMuted = Color(0xFFF3F4F6);
 
   // Dark (Surface variants)
   static const Color dark = Color(0xFF111827);
   static const Color darkSurface = Color(0xFF1C1B1F);
   static const Color darkCard = Color(0xFF27272A);
-  static const Color darkBorder = Color(0xFF374151);
   static const Color darkMuted = Color(0xFF1F2937);
 
   /// Primary color palette (Material Design 3)
