@@ -48,7 +48,7 @@ class LightColorScheme {
 
       // Inverse colors
       inversePrimary: ColorPalette.primary[300]!,
-      inverseSurface: Color(0xFF1C1B1F),
+      inverseSurface: ColorPalette.darkSurface,
       onInverseSurface: ColorPalette.neutral[100]!,
 
       // Other colors

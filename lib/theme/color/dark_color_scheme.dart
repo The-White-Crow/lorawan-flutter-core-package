@@ -49,7 +49,7 @@ class DarkColorScheme {
       // Inverse colors
       inversePrimary: ColorPalette.primary[500]!,
       inverseSurface: ColorPalette.neutral[200]!,
-      onInverseSurface: Color(0xFF1C1B1F),
+      onInverseSurface: ColorPalette.darkSurface,
 
       // Other colors
       shadow: ColorPalette.black,
