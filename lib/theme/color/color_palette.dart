@@ -11,17 +11,25 @@ class ColorPalette {
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
 
-  // Light (Surface variants)
-  static const Color light = Color(0xFFFFFFFF);
-  static const Color lightSurface = Color(0xFFF9FAFB);
-  static const Color lightCard = Color(0xFFFFFFFF);
-  static const Color lightMuted = Color(0xFFF3F4F6);
+  // Material 3 surface roles (light)
+  static const Color surfaceLight = Color(0xFFF9FAFB);
+  static const Color surfaceDimLight = Color(0xFFF3F4F6);
+  static const Color surfaceBrightLight = Color(0xFFFFFFFF);
+  static const Color surfaceContainerLowestLight = Color(0xFFFFFFFF);
+  static const Color surfaceContainerLowLight = Color(0xFFF9FAFB);
+  static const Color surfaceContainerLight = Color(0xFFF3F4F6);
+  static const Color surfaceContainerHighLight = Color(0xFFE5E7EB);
+  static const Color surfaceContainerHighestLight = Color(0xFFFFFFFF);
 
-  // Dark (Surface variants)
-  static const Color dark = Color(0xFF111827);
-  static const Color darkSurface = Color(0xFF1C1B1F);
-  static const Color darkCard = Color(0xFF27272A);
-  static const Color darkMuted = Color(0xFF1F2937);
+  // Material 3 surface roles (dark)
+  static const Color surfaceDark = Color(0xFF1C1B1F);
+  static const Color surfaceDimDark = Color(0xFF111827);
+  static const Color surfaceBrightDark = Color(0xFF1F2937);
+  static const Color surfaceContainerLowestDark = Color(0xFF1C1B1F);
+  static const Color surfaceContainerLowDark = Color(0xFF1F2937);
+  static const Color surfaceContainerDark = Color(0xFF374151);
+  static const Color surfaceContainerHighDark = Color(0xFF1F2937);
+  static const Color surfaceContainerHighestDark = Color(0xFF27272A);
 
   /// Primary color palette (Material Design 3)
   static const MaterialColor primary = MaterialColor(0xFF3B82F6, <int, Color>{

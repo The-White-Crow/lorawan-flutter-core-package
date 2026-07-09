@@ -10,7 +10,7 @@ class LightColorScheme {
   /// Build the light color scheme
   ColorScheme build() {
     return ColorScheme(
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
 
       // Primary colors
       primary: ColorPalette.primary,
@@ -37,10 +37,16 @@ class LightColorScheme {
       onErrorContainer: ColorPalette.error[900]!,
 
       // Surface colors
-      surface: ColorPalette.lightSurface,
+      surface: ColorPalette.surfaceLight,
+      surfaceDim: ColorPalette.surfaceDimLight,
+      surfaceBright: ColorPalette.surfaceBrightLight,
+      surfaceContainerLowest: ColorPalette.surfaceContainerLowestLight,
+      surfaceContainerLow: ColorPalette.surfaceContainerLowLight,
+      surfaceContainer: ColorPalette.surfaceContainerLight,
+      surfaceContainerHigh: ColorPalette.surfaceContainerHighLight,
+      surfaceContainerHighest: ColorPalette.surfaceContainerHighestLight,
       onSurface: ColorPalette.neutral[900]!,
-      surfaceContainerHighest: ColorPalette.neutral[100]!,
-      onSurfaceVariant: ColorPalette.neutral,
+      onSurfaceVariant: ColorPalette.neutral[700]!,
 
       // Outline colors
       outline: ColorPalette.neutral[400]!,
@@ -48,7 +54,7 @@ class LightColorScheme {
 
       // Inverse colors
       inversePrimary: ColorPalette.primary[300]!,
-      inverseSurface: ColorPalette.darkSurface,
+      inverseSurface: ColorPalette.surfaceDark,
       onInverseSurface: ColorPalette.neutral[100]!,
 
       // Other colors

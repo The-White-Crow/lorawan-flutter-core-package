@@ -37,9 +37,15 @@ class DarkColorScheme {
       onErrorContainer: ColorPalette.error[100]!,
 
       // Surface colors
-      surface: ColorPalette.darkSurface,
+      surface: ColorPalette.surfaceDark,
+      surfaceDim: ColorPalette.surfaceDimDark,
+      surfaceBright: ColorPalette.surfaceBrightDark,
+      surfaceContainerLowest: ColorPalette.surfaceContainerLowestDark,
+      surfaceContainerLow: ColorPalette.surfaceContainerLowDark,
+      surfaceContainer: ColorPalette.surfaceContainerDark,
+      surfaceContainerHigh: ColorPalette.surfaceContainerHighDark,
+      surfaceContainerHighest: ColorPalette.surfaceContainerHighestDark,
       onSurface: ColorPalette.neutral[200]!,
-      surfaceContainerHighest: ColorPalette.neutral[700]!,
       onSurfaceVariant: ColorPalette.neutral[400]!,
 
       // Outline colors
@@ -49,7 +55,7 @@ class DarkColorScheme {
       // Inverse colors
       inversePrimary: ColorPalette.primary[500]!,
       inverseSurface: ColorPalette.neutral[200]!,
-      onInverseSurface: ColorPalette.darkSurface,
+      onInverseSurface: ColorPalette.surfaceDark,
 
       // Other colors
       shadow: ColorPalette.black,
