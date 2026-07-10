@@ -44,18 +44,26 @@ extension LogExtension on Object {
     }
   }
 
-  bool get _supportsAnsiColors => !Platform.isWindows || stdout.supportsAnsiEscapes;
+  bool get _supportsAnsiColors {
+    if (kIsWeb) return false;
+    return !Platform.isWindows || stdout.supportsAnsiEscapes;
+  }
 
   String _getCallerInfo() {
     try {
       final line = StackTrace.current.toString().split('\n')[2].trim();
       final match = RegExp(r'\((.+?):(\d+):\d+\)$').firstMatch(line);
       if (match != null) {
-        final file = match.group(1)?.split(Platform.pathSeparator).last ?? 'unknown';
+        final file = _extractFileName(match.group(1));
         final lineNum = match.group(2) ?? '0';
         return '$file:$lineNum';
       }
     } catch (_) {}
     return '';
+  }
+
+  String _extractFileName(String? path) {
+    if (path == null || path.isEmpty) return 'unknown';
+    return path.split(RegExp(r'[\\/]')).last;
   }
 }
