@@ -90,3 +90,4 @@ export 'mixin/state_mixin.dart';
 
 // Utils exports
 export 'utils/debouncer.dart';
+export 'utils/use_case.dart';
