@@ -70,6 +70,23 @@ class PersianPhoneNumberValidation extends Validation<String> {
   }
 }
 
+class E164PhoneValidation extends Validation<String> {
+  const E164PhoneValidation({this.msg});
+
+  final String? msg;
+
+  @override
+  String? validate(BuildContext context, String? value) {
+    final phoneRegex = RegExp(r'^\+[1-9][0-9]{8,14}$');
+
+    if (value == null) return null;
+    if (!phoneRegex.hasMatch(value)) {
+      return msg ?? 'This field is not a valid phone number';
+    }
+    return null;
+  }
+}
+
 /// a validation that checks if the value length is more that a value
 class MinLengthValidation extends Validation<String> {
   const MinLengthValidation(this.minLength, {this.msg});
