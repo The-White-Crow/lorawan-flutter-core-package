@@ -70,8 +70,8 @@ class PersianPhoneNumberValidation extends Validation<String> {
   }
 }
 
-class E164PhoneValidation extends Validation<String> {
-  const E164PhoneValidation({this.msg});
+class E164PhoneNumberValidation extends Validation<String> {
+  const E164PhoneNumberValidation({this.msg});
 
   final String? msg;
 
