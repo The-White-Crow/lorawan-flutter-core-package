@@ -32,6 +32,16 @@ extension ProviderStateUIX on WidgetRef {
   /// - [onPopUpError]: Optional callback for handling popUp errors (e.g., show toast).
   /// - [select]: Optional selector function for optimized rebuilds. Only rebuilds when the selected value changes.
   ///
+  /// [retryLabel] localizes retry controls, including the compact retry tooltip.
+  /// [onRetainedData] opts into rendering non-null retained data during loading
+  /// or error, ahead of [onLoading] and [fakeData]. It receives `isStale: true`,
+  /// the current loading flag, and the failure on error. Without it, existing
+  /// loading/error rendering is unchanged. Success still uses [onSuccess].
+  /// The builder owns refresh/error indicators and retry actions; it must return
+  /// a sliver when [sliver] is true. No data is cached by this renderer.
+  /// Popup callbacks run only when the provider's failure changes, not on build;
+  /// an already-present popup failure is not replayed when first mounted.
+  ///
   /// **Example:**
   /// ```dart
   /// // Basic usage
@@ -55,6 +65,14 @@ extension ProviderStateUIX on WidgetRef {
     required BuildContext context,
     required ProviderBase<ProviderState<T>> provider,
     required Widget Function(T data, {bool isLoading}) onSuccess,
+    String retryLabel = 'Retry',
+    Widget Function(
+      T data, {
+      required bool isLoading,
+      required bool isStale,
+      Failure? failure,
+    })?
+    onRetainedData,
     VoidCallback? onRetry,
     VoidCallback? onInit,
     Widget Function()? onLoading,
@@ -73,6 +91,7 @@ extension ProviderStateUIX on WidgetRef {
       // Also watch status to ensure we rebuild on error/loading state changes
       // This is necessary because error/loading states might change without data change
       watch(provider.select((state) => state.status));
+      watch(provider.select((state) => state.failure));
     }
 
     // Get full state for error/loading/success handling
@@ -96,6 +115,17 @@ extension ProviderStateUIX on WidgetRef {
       return const SizedBox.shrink();
     }
 
+    if (onRetainedData != null &&
+        state.data != null &&
+        (state.isLoading || state.hasError)) {
+      return onRetainedData(
+        state.data as T,
+        isLoading: state.isLoading,
+        isStale: true,
+        failure: state.failure,
+      );
+    }
+
     // Loading state with fake data
     if (state.isLoading || (state.isInit && state.data != null)) {
       if (onLoading != null) {
@@ -107,9 +137,15 @@ extension ProviderStateUIX on WidgetRef {
         if (sliver) {
           // Note: SliverSkeletonizer requires skeletonizer package
           // For now, we'll use a basic implementation
-          return SliverToBoxAdapter(child: SkeletonLoadingWidget(child: onSuccess(fakeData, isLoading: true)));
+          return SliverToBoxAdapter(
+            child: SkeletonLoadingWidget(
+              child: onSuccess(fakeData, isLoading: true),
+            ),
+          );
         } else {
-          return SkeletonLoadingWidget(child: onSuccess(fakeData, isLoading: true));
+          return SkeletonLoadingWidget(
+            child: onSuccess(fakeData, isLoading: true),
+          );
         }
       }
 
@@ -127,22 +163,40 @@ extension ProviderStateUIX on WidgetRef {
 
       // Handle inline errors
       if (failure.type == FailureType.inline) {
-        return InlineErrorWidget(failure: failure, onRetry: onRetry ?? () => refresh(provider), showRetry: onRetry != null);
+        return InlineErrorWidget(
+          failure: failure,
+          onRetry: onRetry ?? () => refresh(provider),
+          showRetry: onRetry != null,
+          retryLabel: retryLabel,
+        );
       }
 
       // Handle fullPage errors
       if (failure.type == FailureType.fullPage) {
         if (innerState) {
           return Center(
-            child: SmallErrorWidget(title: failure.error, onClick: onRetry ?? () => refresh(provider)),
+            child: SmallErrorWidget(
+              title: failure.error,
+              onClick: onRetry ?? () => refresh(provider),
+              retryLabel: retryLabel,
+            ),
           );
         }
-        return FullPageErrorWidget(failure: failure, onRetry: onRetry ?? () => refresh(provider));
+        return FullPageErrorWidget(
+          failure: failure,
+          onRetry: onRetry ?? () => refresh(provider),
+          retryLabel: retryLabel,
+        );
       }
 
       // PopUp errors are handled by listener above
       // Fallback: show inline error
-      return InlineErrorWidget(failure: failure, onRetry: onRetry ?? () => refresh(provider), showRetry: onRetry != null);
+      return InlineErrorWidget(
+        failure: failure,
+        onRetry: onRetry ?? () => refresh(provider),
+        showRetry: onRetry != null,
+        retryLabel: retryLabel,
+      );
     }
 
     // Success state
